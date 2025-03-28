@@ -45,12 +45,12 @@ This guide details how you can properly configure the `intent_interact_action` f
 
 The `intent_interact_action` is highly configurable to fit your interaction requirements. The key configuration parameters are explained below:
 
-- **strict** (`bool`, default=`true`):
+- **strict** (`bool`, default=`true`):  
   If enabled, only actions associated with explicitly matched intents from the provided anchors will be executed. Disable strict mode (`strict=False`) to execute other available actions by default, even if their intents are not directly matched.
 
-- **exceptions** (`list`, default=`['FunctionInteractAction']`):
-  When in strict mode, this list specifies action node names to always include, regardless of intent matching outcomes.
-  Users can add additional node names to ensure certain actions consistently execute despite strict intent classification, e.g.:
+- **exceptions** (`list`, default=`['FunctionInteractAction']`):  
+  When in strict mode, this list specifies action node names to always include, regardless of intent matching outcomes.  
+  Users can add additional node names to ensure certain actions consistently execute despite strict intent classification, e.g.:  
   ```yaml
   exceptions:
     - FunctionInteractAction
