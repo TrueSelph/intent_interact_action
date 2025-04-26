@@ -119,25 +119,43 @@ HISTORY:
         return anchor_index;
     }
 
-    can healthcheck() -> bool {
-        try {
-            if(
-               self.prompt and
-               self.history_size >= 0 and
-               self.model_action and
-               self.model_name and
-               self.model_temperature and
-               self.model_max_tokens > 0 and
-               self.exceptions and
-               self.max_statement_length > 0
-            ) {
-                return True;
-            }
-            return False;
-        } except Exception as e {
-            self.logger.error(f"An exception occurred in {self.label}:\n{traceback.format_exc()}\n");
-            return False;
+    can healthcheck() -> Union[bool, dict] {
+
+        if(not self.prompt) {
+            return {
+                "status": False,
+                "message": "Prompt not specified.",
+                "severity": "error"
+            };
         }
+
+        if(not self.model_action) {
+            return {
+                "status": False,
+                "message": "Model action not specified.",
+                "severity": "error"
+            };
+        }
+
+        if(not self.model_name) {
+            return {
+                "status": False,
+                "message": "Model name not specified.",
+                "severity": "error"
+            };
+        }
+
+        model_action = self.get_agent().get_actions().get(action_label=model_action);
+        if not model_action {
+            return {
+                "status": False,
+                "message": f"Model Action is not registered. {self.model_action}",
+                "severity": "error"
+            };
+        }
+
+        return True;
+
     }
 
 }
