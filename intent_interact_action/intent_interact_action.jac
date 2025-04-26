@@ -107,7 +107,7 @@ HISTORY:
         anchor_index = {};
 
         # get a list of all interact actions
-        all_actions = self.get_agent().get_actions().get_all(filter_interact_actions=True, filter_enabled_actions=True);
+        all_actions = self.get_agent().get_actions().get_all(only_interact_actions=True, only_enabled=True);
 
         for action_node in all_actions {
             # only actions which implement anchors are of interest to us
