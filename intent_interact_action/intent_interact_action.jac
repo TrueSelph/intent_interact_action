@@ -2,6 +2,7 @@ import:py os;
 import:py json;
 import:py logging;
 import:py traceback;
+import:py from typing { Union }
 import:py from logging {Logger}
 import:py from jivas.agent.modules.agentlib.utils {Utils}
 import:jac from jivas.agent.action.actions { Actions }
@@ -145,7 +146,7 @@ HISTORY:
             };
         }
 
-        model_action = self.get_agent().get_actions().get(action_label=model_action);
+        model_action = self.get_agent().get_actions().get(action_label=self.model_action);
         if not model_action {
             return {
                 "status": False,
