@@ -4,3 +4,6 @@
 ## 0.0.2
 - Update for core compatibility
 - Updated healthcheck
+
+## 0.0.3
+- Updated healthcheck
