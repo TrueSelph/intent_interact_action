@@ -7,3 +7,6 @@
 
 ## 0.0.3
 - Updated healthcheck
+
+## 0.0.4
+- Updated langchain_model_action dependency

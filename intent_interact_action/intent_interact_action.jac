@@ -40,7 +40,7 @@ HISTORY:
     has model_action:str = "LangChainModelAction";
     has model_name:str = "gpt-4o";
     has model_temperature:float = 0.2;
-    has model_max_tokens:int = 2048;
+    has model_max_tokens:int = 4096;
     has exceptions:list = ['FunctionInteractAction']; # list of actions which are included in intent, regardless
 
 

@@ -6,14 +6,13 @@
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/TrueSelph/intent_interact_action)
 ![GitHub](https://img.shields.io/github/license/TrueSelph/intent_interact_action)
 
-The **Intent Interact Action** is an advanced interact action designed for classifying natural language utterances against registered intents, subsequently enriching the interaction process by adding corresponding intents (actions) dynamically. It serves as an essential component within the core action group, enabling accurate intent detection and interaction enhancement within conversational flows.
+The **Intent Interact Action** is designed for classifying natural language utterances against registered intents, subsequently enriching the interaction process by adding corresponding intents (actions) dynamically. It serves as an essential component within the core action group, enabling accurate intent detection and interaction enhancement within conversational flows.
 
 ## Package Information
 
 - **Name:** `jivas/intent_interact_action`
 - **Author:** [V75 Inc.](https://v75inc.com/)
 - **Architype:** `IntentInteractAction`
-- **Version:** `0.0.1`
 
 ## Meta Information
 
@@ -33,7 +32,7 @@ The **Intent Interact Action** is an advanced interact action designed for class
 
 - **Jivas:** `^2.0.0`
 - **Actions:**
-  - [`jivas/langchain_model_action`](https://github.com/TrueSelph/langchain_model_action): `^0.0.1`
+  - [`jivas/langchain_model_action`](https://github.com/TrueSelph/langchain_model_action): `>=0.0.1`
 
 ---
 
