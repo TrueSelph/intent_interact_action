@@ -30,9 +30,9 @@ The **Intent Interact Action** is designed for classifying natural language utte
 
 ## Dependencies
 
-- **Jivas:** `^2.0.0`
+- **Jivas:** `^2.1.0`
 - **Actions:**
-  - [`jivas/langchain_model_action`](https://github.com/TrueSelph/langchain_model_action): `>=0.0.1`
+  - [`jivas/langchain_model_action`](https://github.com/TrueSelph/langchain_model_action): `>=0.1.0`
 
 ---
 

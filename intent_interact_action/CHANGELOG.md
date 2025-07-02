@@ -10,3 +10,6 @@
 
 ## 0.0.4
 - Updated langchain_model_action dependency
+
+# 0.1.0
+- Updated to support Jivas 2.1.0
