@@ -7,7 +7,7 @@ import from logging {Logger}
 import from jivas.agent.modules.agentlib.utils {Utils}
 import from jivas.agent.action.actions { Actions }
 import from jivas.agent.action.interact_action { InteractAction }
-import from jivas.agent.action.interact_graph_walker { interact_graph_walker }
+import from jivas.agent.action.agent_graph_walker { agent_graph_walker }
 
 
 node IntentInteractAction(InteractAction) {
@@ -44,14 +44,14 @@ HISTORY:
     has exceptions:list = ['FunctionInteractAction']; # list of actions which are included in intent, regardless
 
 
-    def touch(visitor: interact_graph_walker) -> bool {
+    def touch(visitor: agent_graph_walker) -> bool {
         # authorize the interact to run
         if visitor.utterance {
             return True;
         }
     }
 
-    def execute(visitor: interact_graph_walker) -> None {
+    def execute(visitor: agent_graph_walker) -> None {
 
         # first, let's see if we have any defined anchors from any actions for classification
         anchor_index = self.get_anchor_index(visitor);
@@ -93,14 +93,12 @@ HISTORY:
                             visitor.interaction_node.add_intent(intent);
                         }
                     }
-
                 }
             }
         }
-
     }
 
-    def get_anchor_index(visitor: interact_graph_walker) -> dict {
+    def get_anchor_index(visitor: agent_graph_walker) -> dict {
         # retrieves a dictionary of anchor statements from each action for classification; to be spawned on an agent
         anchor_index = {};
 
