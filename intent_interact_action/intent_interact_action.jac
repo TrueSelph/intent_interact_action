@@ -4,7 +4,9 @@ import logging;
 import traceback;
 import from typing { Union }
 import from logging {Logger}
-import from jivas.agent.modules.agentlib.utils {Utils}
+
+import from jivas.agent.modules.text.formatting { escape_string }
+
 import from jivas.agent.action.actions { Actions }
 import from jivas.agent.action.interact_action { InteractAction }
 import from jivas.agent.action.agent_graph_walker { agent_graph_walker }
@@ -67,7 +69,7 @@ HISTORY:
 
             # set the prompt variables
             prompt_variables = {
-                "anchor_index": Utils.escape_string(json.dumps(anchor_index)),
+                "anchor_index": escape_string(json.dumps(anchor_index)),
                 "utterance": visitor.utterance,
                 "history": history
             };
