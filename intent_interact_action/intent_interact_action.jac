@@ -68,14 +68,14 @@ HISTORY:
             ];
             utterance = visitor.utterance;
 
-            # get the parent message if supervisor replied to a short pass request 
+            # get the parent message if supervisor replied to a short pass request
             if (whatsapp_chat_data := visitor.interaction_node.data_get("whatsapp_chat")) {
                 # grab the full replied message content if any
                 replied_message_content = whatsapp_chat_data.get('quoted_message', {}).get('body');
 
                 if replied_message_content {
                     utterance = "PARENT MESSAGE: " + replied_message_content + "\nREPLY: " + visitor.utterance;
-                } 
+                }
             }
 
 
