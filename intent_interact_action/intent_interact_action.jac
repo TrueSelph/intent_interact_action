@@ -62,6 +62,13 @@ HISTORY:
             # grab the history
             history = visitor.frame_node.get_transcript(interactions = self.history_size, max_statement_length = self.max_statement_length, with_events = True);
 
+            # add active events to history
+            if events := visitor.frame_node.get_active_event_statements() {
+                for event in events {
+                    history += f"ai: {event['ai']}\n";
+                }
+            }
+
             # prepare the prompt
             prompt_messages = [
                 {"system": self.prompt}

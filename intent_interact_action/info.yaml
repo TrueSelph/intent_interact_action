@@ -2,7 +2,7 @@ package:
   name: jivas/intent_interact_action
   author: V75 Inc.
   archetype: IntentInteractAction
-  version: 0.1.0
+  version: 0.1.2
   meta:
     title: Intent Interact Action
     description: Classifies an utterance against registered intents; adds one or more intents (actions) to interaction.
